@@ -1,5 +1,6 @@
 import CustomButton from '@/components/custom-button';
 import CustomInput from '@/components/custom-input';
+import { signIn } from '@/lib/appwrite';
 // import * as Sentry from '@sentry/react-native';
 import { Link, router } from 'expo-router';
 import { useState } from 'react';
@@ -17,7 +18,7 @@ const SignIn = () => {
     setIsSubmitting(true);
 
     try {
-      // await signIn({ email, password });
+      await signIn({ email, password });
 
       router.replace('/');
     } catch (error: any) {
